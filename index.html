@@ -1,112 +1,67 @@
 <!DOCTYPE html>
-<html lang="ur">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Happy Birthday, Faraz!</title>
-  <style>
-    body {
-      margin: 0; padding: 0;
-      height: 100vh;
-      background: url('https://images.unsplash.com/photo-1519608487953-e999c86e7455?auto=format&fit=crop&w=1400&q=80') center/cover no-repeat;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-family: 'Segoe UI', sans-serif;
-      color: #fff;
-      text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
-    }
-    .container {
-      background: rgba(0,0,0,0.4);
-      padding: 20px 40px;
-      border-radius: 10px;
-      text-align: center;
-      animation: fadeIn 2s ease-in-out;
-    }
-    h1 {
-      font-size: 2.5rem;
-      margin-bottom: 10px;
-      color: #ffccff;
-    }
-    p {
-      font-size: 1.2rem;
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-    @media (max-width: 600px) {
-      h1 { font-size: 2rem; }
-      p { font-size: 1rem; }
-    }
-  </style>
+  <title>Happy Birthday Sher G</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="container">
-    <h1>🎉 Happy Birthday, <strong>Faraz</strong> 🎉</h1>
-    <p>My love, you make every moment magical.<br>
-       I'm so lucky to have you. ❤️</p>
-  </div>
+  <h1>🎉 Happy Birthday Faraz 🎉</h1>
+  <h2>From: Your Sher G 💘</h2>
 
-  <!-- Love Music Auto Play -->
-  <audio autoplay loop>
-    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+  <!-- 👇 Replace this with your image -->
+  <img src="your-image.jpg" alt="Sher G and Faraz" />
+
+  <p>Happy birthday, my love! I'm so lucky to have you in my life. 💖</p>
+
+  <!-- Music autoplay -->
+  <audio controls autoplay loop>
+    <source src="music.mp3" type="audio/mpeg" />
     Your browser does not support the audio element.
   </audio>
 </body>
 </html>
-html
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Happy Birthday love!</title>
-  <style>
-    body { background: #fcae6e; margin: 0; overflow: hidden; }
-    .centered { display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; }
-    img { max-width: 300px; border-radius: 20px; margin-bottom: 20px; }
-    h1 { color: #fff; font-size: 3em; margin: 0; }
-    #balloon-container { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: 1; }
-  </style>
-</head>
-<body>
-  <audio src="MentalMentor" autoplay loop></audio>
-  <div id="balloon-container"></div>
-  <div class="centered" style="position:relative; z-index:2;">
-    <img src="WhatsApp Image 2025-06-14 at 12.12.38_0fdea91a.jpg" alt="Birthday Image" />
-    <h1>Happy Birthday!</h1>
-    <p>Wishing you a day full of joy and surprises!</p>
-  </div>
-  <script>
-    // Balloons animation
-    function randomBetween(min, max) { return min + Math.random() * (max - min); }
-function createBalloon() {
-      const balloon = document.createElement('div');
-      balloon.style.position = 'absolute';
-      balloon.style.left = randomBetween(0, window.innerWidth - 50) + 'px';
-      balloon.style.bottom = '-100px';
-      balloon.style.width = '40px';
-      balloon.style.height = '60px';
-      balloon.style.background = `hsl(${Math.random()*360}, 70%, 60%)`;
-      balloon.style.borderRadius = '50% 50% 50% 50% / 60% 60% 40% 40%';
-      balloon.style.boxShadow = '0 0 10px #fff8';
-      balloon.style.opacity = 0.8;
-      balloon.style.zIndex = 1;
-      document.getElementById('balloon-container').appendChild(balloon);
+body {
+  background: linear-gradient(to right, #ff99cc, #ffccff);
+  font-family: 'Comic Sans MS', cursive;
+  text-align: center;
+  padding: 50px;
+  color: #d60087;
+}
 
-      let pos = 0;
-      const speed = randomBetween(1, 2);
-function float() {
-        pos += speed;
-        balloon.style.bottom = pos + 'px';
-        if (pos < window.innerHeight + 100) {
-          requestAnimationFrame(float);
-        } else {
-          balloon.remove();
-        }
-      }
-      float();
-    }
-    setInterval(createBalloon, 500);
-  </script>
-</body>
-</html>
+h1 {
+  font-size: 3rem;
+  margin-top: 20px;
+}
+
+h2 {
+  font-size: 2rem;
+  color: #ff007f;
+}
+
+p {
+  font-size: 1.2rem;
+  margin-top: 10px;
+}
+
+img {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid #fff;
+  margin-top: 20px;
+}
+
+audio {
+  margin-top: 30px;
+}
+<source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg" />
+
+     
+ 
+
+ 
+     
+   
