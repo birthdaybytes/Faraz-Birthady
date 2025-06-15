@@ -88,8 +88,15 @@
   <div class="final-message">Happy Birthday to you, Faraz! 🎉</div>
 
 </body>
-<audio autoplay loop>
-  <source src="musicmp" type="audio/mpeg">
-  Your browser does not support the audio tag.
+<button id="play">Play Music</button>
+<audio id="music" loop>
+  <source src="musicmp" type="audio/mp3">
 </audio>
+
+<script>
+  document.getElementById('play').addEventListener('click', function() {
+    const music = document.getElementById('music');
+    music.play();
+  });
+</script>
 
