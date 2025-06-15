@@ -16,36 +16,69 @@
       color: #fff;
       text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
     }
+
     .container {
       background: rgba(0,0,0,0.4);
       padding: 20px 40px;
       border-radius: 10px;
       text-align: center;
       animation: fadeIn 2s ease-in-out;
+      max-width: 90%;
     }
+
     h1 {
       font-size: 2.5rem;
       margin-bottom: 10px;
       color: #ffccff;
     }
+
     p {
       font-size: 1.2rem;
+      margin: 10px 0;
     }
+
+    .photo {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid #fff;
+      margin: 15px 0;
+    }
+
+    .quote {
+      font-style: italic;
+      font-size: 1rem;
+      margin-top: 10px;
+      color: #ffe6f0;
+    }
+
     @keyframes fadeIn {
       from { opacity: 0; }
       to { opacity: 1; }
     }
+
     @media (max-width: 600px) {
       h1 { font-size: 2rem; }
-      p { font-size: 1rem; }
+      p, .quote { font-size: 1rem; }
     }
   </style>
 </head>
 <body>
   <div class="container">
     <h1>🎉 Happy Birthday, <strong>Faraz</strong> 🎉</h1>
+
+    <!-- Faraz ki picture -->
+    <img src="faraz.jpg" alt="Faraz" class="photo" />
+
     <p>My love, you make every moment magical.<br>
        I'm so lucky to have you. ❤️</p>
+
+    <!-- Quote -->
+    <div class="quote">
+      “May the joy that you have spread in the past come back to you on this day. <br>
+      Wishing you a very happy birthday!”
+    </div>
   </div>
 
   <!-- Love Music Auto Play -->
@@ -55,3 +88,4 @@
   </audio>
 </body>
 </html>
+
