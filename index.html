@@ -55,3 +55,58 @@
   </audio>
 </body>
 </html>
+html
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Happy Birthday love!</title>
+  <style>
+    body { background: #fcae6e; margin: 0; overflow: hidden; }
+    .centered { display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; }
+    img { max-width: 300px; border-radius: 20px; margin-bottom: 20px; }
+    h1 { color: #fff; font-size: 3em; margin: 0; }
+    #balloon-container { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: 1; }
+  </style>
+</head>
+<body>
+  <audio src="MentalMentor" autoplay loop></audio>
+  <div id="balloon-container"></div>
+  <div class="centered" style="position:relative; z-index:2;">
+    <img src="YOUR_IMAGE_NAME.jpg" alt="Birthday Image" />
+    <h1>Happy Birthday!</h1>
+    <p>Wishing you a day full of joy and surprises!</p>
+  </div>
+  <script>
+    // Balloons animation
+    function randomBetween(min, max) { return min + Math.random() * (max - min); }
+function createBalloon() {
+      const balloon = document.createElement('div');
+      balloon.style.position = 'absolute';
+      balloon.style.left = randomBetween(0, window.innerWidth - 50) + 'px';
+      balloon.style.bottom = '-100px';
+      balloon.style.width = '40px';
+      balloon.style.height = '60px';
+      balloon.style.background = `hsl(${Math.random()*360}, 70%, 60%)`;
+      balloon.style.borderRadius = '50% 50% 50% 50% / 60% 60% 40% 40%';
+      balloon.style.boxShadow = '0 0 10px #fff8';
+      balloon.style.opacity = 0.8;
+      balloon.style.zIndex = 1;
+      document.getElementById('balloon-container').appendChild(balloon);
+
+      let pos = 0;
+      const speed = randomBetween(1, 2);
+function float() {
+        pos += speed;
+        balloon.style.bottom = pos + 'px';
+        if (pos < window.innerHeight + 100) {
+          requestAnimationFrame(float);
+        } else {
+          balloon.remove();
+        }
+      }
+      float();
+    }
+    setInterval(createBalloon, 500);
+  </script>
+</body>
+</html>
