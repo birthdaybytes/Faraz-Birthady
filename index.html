@@ -15,77 +15,106 @@
       font-family: 'Segoe UI', sans-serif;
       color: #fff;
       text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+      overflow: hidden;
     }
-
-    .container {
+.container {
       background: rgba(0,0,0,0.4);
       padding: 20px 40px;
       border-radius: 10px;
       text-align: center;
       animation: fadeIn 2s ease-in-out;
       max-width: 90%;
+      z-index: 2;
+      position: relative;
     }
-
     h1 {
       font-size: 2.5rem;
       margin-bottom: 10px;
       color: #ffccff;
     }
-
     p {
       font-size: 1.2rem;
       margin: 10px 0;
     }
-
     .photo {
       width: 200px;
-      height: 200px;
+       height: 200px;
       border-radius: 50%;
       object-fit: cover;
       border: 4px solid #fff;
       margin: 15px 0;
+      background: #fff;
     }
-
     .quote {
       font-style: italic;
       font-size: 1rem;
       margin-top: 10px;
       color: #ffe6f0;
     }
-
     @keyframes fadeIn {
       from { opacity: 0; }
       to { opacity: 1; }
     }
-
     @media (max-width: 600px) {
       h1 { font-size: 2rem; }
       p, .quote { font-size: 1rem; }
     }
+    #balloon-container {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw; height: 100vh;
+ pointer-events: none;
+      z-index: 1;
+    }
   </style>
 </head>
 <body>
+  <div id="balloon-container"></div>
   <div class="container">
     <h1>🎉 Happy Birthday, <strong>Faraz</strong> 🎉</h1>
-
     <!-- Faraz ki picture -->
-    <img src="WhatsApp Image 2025-06-14 at 12.12.38_0fdea91a" alt="Faraz" class="photo" />
-
+    <img src="WhatsApp%20Image%202025-06-14%20at%2012.12.38_0fdea91a.jpg" alt="Faraz" class="photo" />
     <p>My love, you make every moment magical.<br>
-       I'm so lucky to have you. ❤️</p>
-
-    <!-- Quote -->
+       I'm so lucky to have you. ❤</p>
     <div class="quote">
       “May the joy that you have spread in the past come back to you on this day. <br>
       Wishing you a very happy birthday!”
     </div>
   </div>
-
   <!-- Love Music Auto Play -->
-  <audio autoplay loop>
-    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+<audio autoplay loop>
+    <source src="https://cdn.pixabay.com/audio/2022/07/26/audio_12bfa1b7c7.mp3" type="audio/mpeg">
     Your browser does not support the audio element.
   </audio>
+  <script>
+    // Balloons animation
+    function randomBetween(min, max) { return min + Math.random() * (max - min); }
+    function createBalloon() {
+      const balloon = document.createElement('div');
+      balloon.style.position = 'absolute';
+      balloon.style.left = randomBetween(0, window.innerWidth - 50) + 'px';
+      balloon.style.bottom = '-100px';
+      balloon.style.width = '40px';
+      balloon.style.height = '60px';
+      balloon.style.background = `hsl(${Math.random()*360}, 70%, 60%)`;
+      balloon.style.borderRadius = '50% 50% 50% 50% / 60% 60% 40% 40%';
+      balloon.style.boxShadow = '0 0 10px #fff8';
+      balloon.style.opacity = 0.8;
+      balloon.style.zIndex = 1;
+ document.getElementById('balloon-container').appendChild(balloon);
+      let pos = 0;
+      const speed = randomBetween(1, 2);
+      function float() {
+        pos += speed;
+        balloon.style.bottom = pos + 'px';
+        if (pos < window.innerHeight + 100) {
+          requestAnimationFrame(float);
+        } else {
+          balloon.remove();
+        }
+      }
+      float();
+    }
+    setInterval(createBalloon, 500);
+  </script>
 </body>
-</html>
-
